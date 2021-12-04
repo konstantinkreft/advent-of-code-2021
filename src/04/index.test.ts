@@ -1,4 +1,10 @@
-import { partOne, markNumberOnBingoBoard, BingoBoard, isBingo } from "./";
+import {
+  partOne,
+  partTwo,
+  markNumberOnBingoBoard,
+  BingoBoard,
+  isBingo,
+} from "./";
 
 const data = `7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
 
@@ -47,7 +53,7 @@ describe("04", () => {
     ]);
   });
 
-  it('isBingo should return true for bingo in row', () => {
+  it("isBingo should return true for bingo in row", () => {
     const bingoBoard: BingoBoard = [
       [
         { marked: false, value: 1 },
@@ -62,7 +68,7 @@ describe("04", () => {
     expect(isBingo(bingoBoard)).toBe(true);
   });
 
-  it('isBingo should return true for bingo in column', () => {
+  it("isBingo should return true for bingo in column", () => {
     const bingoBoard: BingoBoard = [
       [
         { marked: false, value: 1 },
@@ -77,7 +83,7 @@ describe("04", () => {
     expect(isBingo(bingoBoard)).toBe(true);
   });
 
-  it('isBingo should return false for not bingo', () => {
+  it("isBingo should return false for not bingo", () => {
     const bingoBoard: BingoBoard = [
       [
         { marked: false, value: 1 },
@@ -96,7 +102,7 @@ describe("04", () => {
     expect(partOne(data)).toEqual(4512);
   });
 
-  // it("part two should return 230 for test input", () => {
-  //   expect(partTwo(testInput)).toEqual(230);
-  // });
+  it("part two should return 1924 for test input", () => {
+    expect(partTwo(data)).toEqual(1924);
+  });
 });

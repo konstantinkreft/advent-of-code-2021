@@ -37,7 +37,7 @@ export function isBingo(board: BingoBoard) {
   });
 }
 
-export function partOne(input: string = data) {
+function parseData(input: string): [number[], BingoBoard[]] {
   const [bingoInputString, ...bingoBoardsString] = input.split("\n\n");
   const bingoInput = bingoInputString.split(",").map(Number);
   const bingoBoards: BingoBoard[] = bingoBoardsString.map((bingoBoard) => {
@@ -53,42 +53,61 @@ export function partOne(input: string = data) {
     });
   });
 
-  let boardWithBingo: BingoBoard | undefined = undefined;
-  let bingoNumber: number | undefined = undefined;
-
-  bingoInput.every((number) => {
-    if (boardWithBingo) {
-      // break out of loop
-      return false;
-    }
-
-    bingoBoards.forEach((board) => {
-      const markedBingoBoard = markNumberOnBingoBoard(board, number);
-      const boardHasBingo = isBingo(markedBingoBoard);
-
-      if (boardHasBingo) {
-        bingoNumber = number;
-        boardWithBingo = markedBingoBoard;
-      }
-    });
-
-    return true;
-  });
-
-  if (boardWithBingo && bingoNumber) {
-    const unmarkedCellsSum = (boardWithBingo as BingoBoard).reduce(
-      (acc, curr) => {
-        const unMarkedCells = curr
-          .filter((cell) => !cell.marked)
-          .map((cell) => cell.value);
-
-        return unMarkedCells.reduce((acc, curr) => acc + curr, acc);
-      },
-      0
-    );
-
-    return unmarkedCellsSum * bingoNumber;
-  }
+  return [bingoInput, bingoBoards];
 }
 
-export function partTwo(input: string = data) {}
+function getBingos(bingoBoards: BingoBoard[], inputNumbers: number[]) {
+  const bingos: { index: number; bingoNumber: number }[] = [];
+
+  inputNumbers.forEach((number) => {
+    bingoBoards.forEach((board, boardIndex) => {
+      const alreadySolved = bingos.some((bingo) => bingo.index === boardIndex);
+
+      if (!alreadySolved) {
+        const markedBingoBoard = markNumberOnBingoBoard(board, number);
+        const boardHasBingo = isBingo(markedBingoBoard);
+
+        if (boardHasBingo) {
+          bingos.push({ index: boardIndex, bingoNumber: number });
+        }
+      }
+    });
+  });
+
+  return bingos;
+}
+
+function getUnmarkedCellsSum(board: BingoBoard) {
+  return board.reduce((acc, curr) => {
+    const unMarkedCells = curr
+      .filter((cell) => !cell.marked)
+      .map((cell) => cell.value);
+
+    return unMarkedCells.reduce((acc, curr) => acc + curr, acc);
+  }, 0);
+}
+
+export function partOne(input: string = data) {
+  const [bingoInput, bingoBoards] = parseData(input);
+  const bingos = getBingos(bingoBoards, bingoInput);
+
+  const firstBingo = bingos[0];
+  const firstBingoBoard = bingoBoards[firstBingo.index];
+  const firstBingoNumber = firstBingo.bingoNumber;
+
+  const unmarkedCellsSum = getUnmarkedCellsSum(firstBingoBoard);
+
+  return unmarkedCellsSum * firstBingoNumber;
+}
+
+export function partTwo(input: string = data) {
+  const [bingoInput, bingoBoards] = parseData(input);
+  const bingos = getBingos(bingoBoards, bingoInput);
+
+  const lastBingo = bingos.pop();
+  const lastBingoBoard = bingoBoards[lastBingo!.index];
+  const lastBingoNumber = lastBingo!.bingoNumber;
+
+  const unmarkedCellsSum = getUnmarkedCellsSum(lastBingoBoard);
+  return unmarkedCellsSum * lastBingoNumber;
+}

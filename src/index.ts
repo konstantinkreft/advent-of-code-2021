@@ -13,7 +13,7 @@ console.log(`-------------------------`);
 /**
  * Day 02
  */
-console.log("Day 01");
+console.log("Day 02");
 console.log(`Part 1: ${day02partOne()}`);
 console.log(`Part 2: ${day02partTwo()}`);
 console.log(`-------------------------`);
