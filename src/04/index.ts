@@ -91,9 +91,9 @@ export function partOne(input: string = data) {
   const [bingoInput, bingoBoards] = parseData(input);
   const bingos = getBingos(bingoBoards, bingoInput);
 
-  const firstBingo = bingos[0];
-  const firstBingoBoard = bingoBoards[firstBingo.index];
-  const firstBingoNumber = firstBingo.bingoNumber;
+  const firstBingo = bingos.shift();
+  const firstBingoBoard = bingoBoards[firstBingo!.index];
+  const firstBingoNumber = firstBingo!.bingoNumber;
 
   const unmarkedCellsSum = getUnmarkedCellsSum(firstBingoBoard);
 
