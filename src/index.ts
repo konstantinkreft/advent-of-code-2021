@@ -3,6 +3,7 @@ import { partOne as day02partOne, partTwo as day02partTwo } from "./02";
 import { partOne as day03partOne, partTwo as day03partTwo } from "./03";
 import { partOne as day04partOne, partTwo as day04partTwo } from "./04";
 import { partOne as day05partOne, partTwo as day05partTwo } from "./05";
+import { partOne as day06partOne, partTwo as day06partTwo } from "./06";
 
 /**
  * Day 01
@@ -38,5 +39,12 @@ console.log(`-------------------------`);
 console.log("Day 05");
 console.log(`Part 1: ${day05partOne()}`);
 console.log(`Part 2: ${day05partTwo()}`);
+console.log(`-------------------------`);
+/**
+ * Day 06
+ */
+console.log("Day 06");
+console.log(`Part 1: ${day06partOne()}`);
+console.log(`Part 2: ${day06partTwo()}`);
 console.log(`-------------------------`);
 
