@@ -13,7 +13,7 @@ describe("08", () => {
     expect(partOne(testInput)).toEqual(15);
   });
 
-  it("part two should return 61229 for test input", () => {
-    expect(partTwo(testInput)).toEqual(61229);
+  it("part two should return 1134 for test input", () => {
+    expect(partTwo(testInput)).toEqual(1134);
   });
 });
