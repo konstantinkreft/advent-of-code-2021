@@ -8,7 +8,7 @@ const data = `2199943210
 
 const testInput = data.split("\n").map(line => line.split("").map(Number));
 
-describe("08", () => {
+describe("09", () => {
   it("part one should return 15 for test input", () => {
     expect(partOne(testInput)).toEqual(15);
   });
