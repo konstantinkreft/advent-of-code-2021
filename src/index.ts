@@ -8,6 +8,7 @@ import { partOne as day07partOne, partTwo as day07partTwo } from "./07";
 import { partOne as day08partOne, partTwo as day08partTwo } from "./08";
 import { partOne as day09partOne, partTwo as day09partTwo } from "./09";
 import { partOne as day10partOne, partTwo as day10partTwo } from "./10";
+import { partOne as day11partOne, partTwo as day11partTwo } from "./11";
 
 /**
  * Day 01
@@ -73,9 +74,16 @@ console.log(`Part 1: ${day09partOne()}`);
 console.log(`Part 2: ${day09partTwo()}`);
 console.log(`-------------------------`);
 /**
- * Day 09
+ * Day 10
  */
 console.log("Day 10");
 console.log(`Part 1: ${day10partOne()}`);
 console.log(`Part 2: ${day10partTwo()}`);
+console.log(`-------------------------`);
+/**
+ * Day 11
+ */
+console.log("Day 11");
+console.log(`Part 1: ${day11partOne()}`);
+console.log(`Part 2: ${day11partTwo()}`);
 console.log(`-------------------------`);
