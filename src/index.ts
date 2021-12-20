@@ -10,80 +10,35 @@ import { partOne as day09partOne, partTwo as day09partTwo } from "./09";
 import { partOne as day10partOne, partTwo as day10partTwo } from "./10";
 import { partOne as day11partOne, partTwo as day11partTwo } from "./11";
 
-/**
- * Day 01
- */
-console.log("Day 01");
-console.log(`Part 1: ${day01partOne()}`);
-console.log(`Part 2: ${day01partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 02
- */
-console.log("Day 02");
-console.log(`Part 1: ${day02partOne()}`);
-console.log(`Part 2: ${day02partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 03
- */
-console.log("Day 03");
-console.log(`Part 1: ${day03partOne()}`);
-console.log(`Part 2: ${day03partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 04
- */
-console.log("Day 04");
-console.log(`Part 1: ${day04partOne()}`);
-console.log(`Part 2: ${day04partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 05
- */
-console.log("Day 05");
-console.log(`Part 1: ${day05partOne()}`);
-console.log(`Part 2: ${day05partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 06
- */
-console.log("Day 06");
-console.log(`Part 1: ${day06partOne()}`);
-console.log(`Part 2: ${day06partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 07
- */
-console.log("Day 07");
-console.log(`Part 1: ${day07partOne()}`);
-console.log(`Part 2: ${day07partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 08
- */
-console.log("Day 08");
-console.log(`Part 1: ${day08partOne()}`);
-console.log(`Part 2: ${day08partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 09
- */
-console.log("Day 09");
-console.log(`Part 1: ${day09partOne()}`);
-console.log(`Part 2: ${day09partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 10
- */
-console.log("Day 10");
-console.log(`Part 1: ${day10partOne()}`);
-console.log(`Part 2: ${day10partTwo()}`);
-console.log(`-------------------------`);
-/**
- * Day 11
- */
-console.log("Day 11");
-console.log(`Part 1: ${day11partOne()}`);
-console.log(`Part 2: ${day11partTwo()}`);
-console.log(`-------------------------`);
+const solutions: [Function, Function][] = [
+  [day01partOne, day01partTwo],
+  [day02partOne, day02partTwo],
+  [day03partOne, day03partTwo],
+  [day04partOne, day04partTwo],
+  [day05partOne, day05partTwo],
+  [day06partOne, day06partTwo],
+  [day07partOne, day07partTwo],
+  [day08partOne, day08partTwo],
+  [day09partOne, day09partTwo],
+  [day10partOne, day10partTwo],
+  [day11partOne, day11partTwo],
+];
+
+for (const [index, solution] of solutions.entries()) {
+  const [part1, part2] = solution;
+  console.log(`Day ${index + 1}\n`);
+
+  console.log('Part 1');
+  console.time("Time");
+  const solutionPart1 = part1();
+  console.timeEnd("Time");
+  console.log(`Solution: ${solutionPart1}\n`);
+
+  console.log('Part 2');
+  console.time("Time");
+  const solutionPart2 = part2();
+  console.timeEnd("Time");
+  console.log(`Solution: ${solutionPart2}\n`);
+
+  console.log(`-------------------------\n`);
+}
