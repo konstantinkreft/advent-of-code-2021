@@ -9,6 +9,7 @@ import { partOne as day08partOne, partTwo as day08partTwo } from "./08";
 import { partOne as day09partOne, partTwo as day09partTwo } from "./09";
 import { partOne as day10partOne, partTwo as day10partTwo } from "./10";
 import { partOne as day11partOne, partTwo as day11partTwo } from "./11";
+import { partOne as day12partOne, partTwo as day12partTwo } from "./12";
 
 const solutions: [Function, Function][] = [
   [day01partOne, day01partTwo],
@@ -22,6 +23,7 @@ const solutions: [Function, Function][] = [
   [day09partOne, day09partTwo],
   [day10partOne, day10partTwo],
   [day11partOne, day11partTwo],
+  [day12partOne, day12partTwo],
 ];
 
 for (const [index, solution] of solutions.entries()) {
