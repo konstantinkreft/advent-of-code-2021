@@ -38,7 +38,7 @@ zg-he
 pj-fs
 start-RW`.split("\n");
 
-describe("11", () => {
+describe("12", () => {
   it("Part 1: Example 1", () => {
     expect(partOne(example1)).toEqual(10);
   });
