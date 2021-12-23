@@ -13,6 +13,7 @@ import { partOne as day12partOne, partTwo as day12partTwo } from "./12";
 import { partOne as day13partOne, partTwo as day13partTwo } from "./13";
 import { partOne as day14partOne, partTwo as day14partTwo } from "./14";
 import { partOne as day15partOne, partTwo as day15partTwo } from "./15";
+import { partOne as day16partOne, partTwo as day16partTwo } from "./16";
 
 const solutions: [Function, Function][] = [
   [day01partOne, day01partTwo],
@@ -30,6 +31,7 @@ const solutions: [Function, Function][] = [
   [day13partOne, day13partTwo],
   [day14partOne, day14partTwo],
   [day15partOne, day15partTwo],
+  [day16partOne, day16partTwo],
 ];
 
 async function main() {
