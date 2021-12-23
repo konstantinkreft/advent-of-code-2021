@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "easystarjs": "^0.4.4",
     "ts-node": "^10.4.0"
   },
   "devDependencies": {

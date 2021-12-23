@@ -12,6 +12,7 @@ import { partOne as day11partOne, partTwo as day11partTwo } from "./11";
 import { partOne as day12partOne, partTwo as day12partTwo } from "./12";
 import { partOne as day13partOne, partTwo as day13partTwo } from "./13";
 import { partOne as day14partOne, partTwo as day14partTwo } from "./14";
+import { partOne as day15partOne, partTwo as day15partTwo } from "./15";
 
 const solutions: [Function, Function][] = [
   [day01partOne, day01partTwo],
@@ -28,23 +29,28 @@ const solutions: [Function, Function][] = [
   [day12partOne, day12partTwo],
   [day13partOne, day13partTwo],
   [day14partOne, day14partTwo],
+  [day15partOne, day15partTwo],
 ];
 
-for (const [index, solution] of solutions.entries()) {
-  const [part1, part2] = solution;
-  console.log(`Day ${index + 1}\n`);
+async function main() {
+  for (const [index, solution] of solutions.entries()) {
+    const [part1, part2] = solution;
+    console.log(`Day ${index + 1}\n`);
 
-  console.log('Part 1');
-  console.time("Time");
-  const solutionPart1 = part1();
-  console.timeEnd("Time");
-  console.log(`Solution: ${solutionPart1}\n`);
+    console.log('Part 1');
+    console.time("Time");
+    const solutionPart1 = await part1();
+    console.timeEnd("Time");
+    console.log(`Solution: ${solutionPart1}\n`);
 
-  console.log('Part 2');
-  console.time("Time");
-  const solutionPart2 = part2();
-  console.timeEnd("Time");
-  console.log(`Solution: ${solutionPart2}\n`);
+    console.log('Part 2');
+    console.time("Time");
+    const solutionPart2 = await part2();
+    console.timeEnd("Time");
+    console.log(`Solution: ${solutionPart2}\n`);
 
-  console.log(`-------------------------\n`);
+    console.log(`-------------------------\n`);
+  }
 }
+
+main();
