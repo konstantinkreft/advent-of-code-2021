@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import {
   partOne,
   partTwo,
@@ -41,7 +43,7 @@ describe("04", () => {
 
     const markedBingoBoard = markNumberOnBingoBoard(bingoBoard, 4);
 
-    expect(markedBingoBoard).toStrictEqual([
+    expect(markedBingoBoard).toEqual([
       [
         { marked: false, value: 1 },
         { marked: false, value: 2 },

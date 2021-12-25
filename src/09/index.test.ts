@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import { partOne, partTwo } from "./index";
 
 const data = `2199943210
@@ -6,7 +8,7 @@ const data = `2199943210
 8767896789
 9899965678`;
 
-const testInput = data.split("\n").map(line => line.split("").map(Number));
+const testInput = data.split("\n").map((line) => line.split("").map(Number));
 
 describe("09", () => {
   it("part one should return 15 for test input", () => {

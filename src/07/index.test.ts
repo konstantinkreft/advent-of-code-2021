@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import { partOne, partTwo } from "./index";
 
 const data = `16,1,2,0,4,2,7,1,2,14`;

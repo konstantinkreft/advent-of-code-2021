@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import { partOne, partTwo } from "./index";
 
 const data = `199

@@ -1,20 +1,22 @@
+import { describe, expect, it } from "vitest";
+
 import { partOne, partTwo } from "./index";
 
 describe("16", () => {
   it("Part 1: Example 1", async () => {
-    expect(await partOne('8A004A801A8002F478')).toEqual(16);
+    expect(await partOne("8A004A801A8002F478")).toEqual(16);
   });
 
   it("Part 1: Example 2", async () => {
-    expect(await partOne('620080001611562C8802118E34')).toEqual(12);
+    expect(await partOne("620080001611562C8802118E34")).toEqual(12);
   });
 
   it("Part 1: Example 3", async () => {
-    expect(await partOne('C0015000016115A2E0802F182340')).toEqual(23);
+    expect(await partOne("C0015000016115A2E0802F182340")).toEqual(23);
   });
 
   it("Part 1: Example 4", async () => {
-    expect(await partOne('A0016C880162017C3686B18A3D4780')).toEqual(31);
+    expect(await partOne("A0016C880162017C3686B18A3D4780")).toEqual(31);
   });
 
   it("Part 2: Example 1", async () => {

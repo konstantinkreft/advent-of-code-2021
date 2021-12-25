@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest";
+
 import { getDiagramSize, partOne, partTwo } from "./index";
 
 const data = `0,9 -> 5,9
@@ -14,7 +16,7 @@ const data = `0,9 -> 5,9
 const testInput = data.split("\n");
 
 describe("05", () => {
-  it('should get the right diagram size', () => {
+  it("should get the right diagram size", () => {
     expect(getDiagramSize(testInput)).toEqual([9, 9]);
   });
 
